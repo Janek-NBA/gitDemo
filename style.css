@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://cdn.cloudflare.steamstatic.com/steam/apps/1506830/ss_a744fe858eb67516e46bd045e165147d866a0dbd.1920x1080.jpg?t=1653581021");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
