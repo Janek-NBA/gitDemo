@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,79 @@
     <link rel="stylesheet" href="style.css">
     <title>gitDemo</title>
 </head>
+
 <body>
+    <div class="enter-details">
+        <h1>Wprowadź dane</h1>
+        <h2>Name:</h2>
+        <input type="text" id="enterName">
+        <h2>ID:</h2>
+        <input type="text" id="enterID">
+        <h2>OVR:</h2>
+        <input type="text" id="enterOVR">
+        <div class="buttons">
+            <button id="insert">INSERT</button>
+            <button id="update">UPDATE</button>
+            <button id="remove">REMOVE</button>
+        </div>
+    </div>
     <div class="fut-player1">
         <img src="players/Neymar.png" alt="">
     </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+        // Import the functions you need from the SDKs you need
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAe0plnnzdm6jVvxGGxI-cQadp0vrLmVwQ",
+            authDomain: "test-cards-5f2f8.firebaseapp.com",
+            databaseURL: "https://test-cards-5f2f8-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "test-cards-5f2f8",
+            storageBucket: "test-cards-5f2f8.appspot.com",
+            messagingSenderId: "164615326709",
+            appId: "1:164615326709:web:131fa9775034044a1ceebc"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+        import {getDatabase, ref, get, set, child, update, remove} 
+        from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+
+        const db = getDatabase();
+
+        const enterName = document.querySelector("#enterName");
+        const enterID = document.querySelector("#enterID");
+        const enterOVR = document.querySelector("#enterOVR");
+
+        const buttonInsert = document.querySelector("#insert");
+        const buttonUpdate = document.querySelector("#update");
+        const buttonRemove = document.querySelector("#remove");
+
+
+        function insertData() {
+            set(ref(db, "players/" + enterID.value), {
+                Name: enterName.value,
+                ID: enterID.value,
+                OVR: enterOVR.value,
+            })
+                .then(() => {
+                    alert("wprowadzony gracz do bazy danych");
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+
+        }
+
+        buttonInsert.addEventListener("click", insertData)
+
+    </script>
 </body>
+
 </html>

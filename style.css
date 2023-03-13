@@ -13,6 +13,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.enter-details {
+    width: 40%;
+    height: 40%;
+    color: rgb(163,189,63);
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .fut-player1 {
@@ -22,5 +34,5 @@ body {
 }
 
 img {
-    width: 60%;
+    width: 80%;
 }
