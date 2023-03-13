@@ -19,7 +19,7 @@ body {
 .enter-details {
     width: 40%;
     height: 40%;
-    color: rgb(163,189,63);
+    color: rgb(163, 189, 63);
     font-size: 45px;
     display: flex;
     flex-direction: column;
@@ -35,4 +35,23 @@ body {
 
 img {
     width: 80%;
+}
+
+@media screen and (max-width:800px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .enter-details {
+        width: 60%;
+        height: 40%;
+        color: rgb(163, 189, 63);
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
